@@ -13,7 +13,10 @@ if (!isProduction) {
   // We are in dev mode. Load Vite tools.
   const { createServer } = await import('vite');
   vite = await createServer({
-    server: { middlewareMode: true },
+    server: { 
+      middlewareMode: true,
+      allowedHosts: true // Add this line
+    },
     appType: 'custom',
     base
   });
